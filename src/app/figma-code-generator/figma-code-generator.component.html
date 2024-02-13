@@ -1,0 +1,30 @@
+ <html>
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <div class="chatbot-container">
+          <div class="chatbot-header">
+             <h2>Wire Frame Generator
+              <button style="float: right;"class="btn btn-secondary" (click)="gotoHome()">Go Back</button>
+             </h2>
+          </div>
+          <div class="chatbot-body">
+             <div class="chatbot-message">
+                <div *ngIf="!hideBotMessage" class="bot-message">What html Page I can generate you today?</div>
+                <div *ngIf="hideBotMessage" class="bot-message">{{hummanMessage}}</div>
+                <div *ngIf="response" class="text-center">
+                  <h4>Source Code</h4>
+                  <p>{{code}}</p>
+                </div>
+                <div *ngIf="response" class="text-center">
+                  <h4>Live Design</h4>
+                  <div [innerHTML]="response"></div>
+              </div>
+               <mat-spinner *ngIf="isLoading" style="margin:0 auto; position: relative;"></mat-spinner>
+             </div>
+          </div>
+          <div class="chatbot-input"> <input type="text" [(ngModel)]="aiAuery" placeholder="Type your message..."> <button (click)="askAi()">Generate Code</button> </div>
+       </div>
+    </body>
+ </html>

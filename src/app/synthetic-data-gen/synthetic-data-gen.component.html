@@ -1,0 +1,37 @@
+<html>
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <div class="chatbot-container">
+          <div class="chatbot-header">
+             <input type="text" style="float:left" [(ngModel)]="rows" placeholder="Number of rows...">
+             <h2>Medical Billing Data Generator
+               <button style="float: right;"class="btn btn-secondary" (click)="gotoHome()">Go Back</button>
+             </h2>
+          </div>
+          <div class="chatbot-body">
+             <div class="chatbot-message">
+                <div *ngIf="!hideBotMessage" class="bot-message">Hello! I can generate simulaion data for patient medical billing based on the below sample 
+                    <br><span>Patient ID: 123456</span><br>
+                    <span>Patient Name: John Doe,</span><br>
+                    <span>Diagnosis Code: J20.9</span><br>
+                    <span>Procedure Code: 99203</span><br>
+                    <span>Total Charge: $500</span><br>
+                    <span>Insurance Claim Amount: $350</span><br>
+                    <p>Please mention number of rows you want in the text box to get appropriate results.</p>
+                </div>
+                <div *ngIf="errMsg">
+                    {{errMsg}}
+                </div>
+                <div *ngFor="let message of aiMessageArray;index as i" class="chatbot-message">
+                  <div class="bot-message">{{message}}</div>
+                  <div class="bot-message">{{humanMessageArray[i]}}</div>
+               </div>
+               <mat-spinner *ngIf="isLoading" style="margin:0 auto; position: relative;" ></mat-spinner>
+             </div>
+          </div>
+          <div class="chatbot-input"> <input type="text" [(ngModel)]="aiAuery" placeholder="Type your message..."> <button (click)="askAi()">Generate Data</button> </div>
+       </div>
+    </body>
+ </html>

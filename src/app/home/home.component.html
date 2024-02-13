@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> * { box-sizing: border-box; } body { margin: 0; padding: 0; font-family: Arial, sans-serif; } .container { max-width: 1200px; margin: 0 auto; padding: 20px; } .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); grid-gap: 20px; } .tile { background-color: #f2f2f2; padding: 20px; border-radius: 5px; text-align: center; } .tile h2 { margin-top: 0; } @media (max-width: 768px) { .tiles { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } } </style>
+ </head>
+ <body>
+    <div class="container">
+        <div class="tiles">
+           <div class="tile">
+              <h2 (click)="gotoYAI()">Smart Training Assistant</h2>
+              <p>Unlock the power of AI for answering questions from video transcripts effortlessly. Seamlessly extract insights, find answers, and enhance comprehension with our cutting-edge technology. Elevate your video content experience with intelligent question-answering AI.</p>
+           </div>
+           <div class="tile">
+              <h2 (click)="gotoFigmaAI()">UI WireFrame Generator</h2>
+              <p>Empower your creativity with our UI WireFrame Generator AI in Figma. Design intuitive layouts, prototype effortlessly, and accelerate your workflow with intelligent features. Transform your ideas into polished designs seamlessly.</p>
+           </div>
+           <div class="tile">
+              <h2 (click)="gotoEmailAI()" >Personal Gmail Assistant</h2>
+              <p>Introducing your Personal Gmail Assistant AI your smart inbox companion! Manage emails efficiently, schedule tasks seamlessly, and stay organized effortlessly. Revolutionize your email experience with AI-powered assistance.</p>
+           </div>
+           <div class="tile">
+             <h2 (click)="gotoSynGenAI()" >Medical Billing Data Generator</h2>
+             <p>Empower your healthcare analytics with our Medical Billing Data Generator powered by Gen AI Synthetic Data Generation. Seamlessly replicate real-world billing scenarios, ensuring comprehensive testing and analysis while safeguarding patient privacy and compliance with regulatory standards.</p>
+          </div>
+           <div class="tile">
+              <h2 (click)="gotoSpeechAI()">Speech to Text AI</h2>
+              <p>Our speech-to-text application utilizes advanced artificial intelligence algorithms to accurately transcribe spoken language into text in real-time. Whether you're conducting interviews, taking notes, or dictating documents, our AI technology ensures fast and precise transcription, enabling seamless communication and productivity in various settings.</p>
+           </div>
+        </div>
+     </div>
+ </body>

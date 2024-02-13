@@ -1,0 +1,35 @@
+<html>
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <div class="chatbot-container">
+          <div class="chatbot-header">
+            <div style="float:left">
+              <label for="exampleInputCourses">Select Course</label>
+              <select style="margin-left: 1rem" [(ngModel)]="course" id="exampleInputCourses" placeholder="Select Course">
+                <option value="Figma">Figma</option>
+                <option value="Sql">Sql</option>
+              </select>
+            </div>
+             <h2>Training Q&A Assistant
+              <button style="float: right;"class="btn btn-secondary" (click)="gotoHome()">Go Back</button>
+             </h2>
+          </div>
+          <div class="chatbot-body">
+            <div class="chatbot-message">
+              <div *ngIf="!hideBotMessage" class="bot-message"><p>Hello! How can I assist you today?</p></div>
+            </div>
+            <div *ngIf="errMsg">
+                {{errMsg}}
+            </div>
+             <div *ngFor="let message of aiMessageArray;index as i" class="chatbot-message">
+                <div class="bot-message">{{message}}</div>
+                <div class="bot-message">{{humanMessageArray[i]}}</div>
+             </div>
+             <mat-spinner *ngIf="isLoading" style="margin:0 auto; position: relative;" ></mat-spinner>
+          </div>
+          <div class="chatbot-input"> <input type="text" [(ngModel)]="aiAuery" placeholder="Type your query..."> <button (click)="askAi()">Answer me</button> </div>
+       </div>
+    </body>
+ </html>

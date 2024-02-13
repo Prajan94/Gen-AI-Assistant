@@ -1,0 +1,469 @@
+Delivered-To: nrprajan14@gmail.com
+Received: by 2002:a59:b350:0:b0:448:6a59:3d3c with SMTP id x16csp630144vqs;
+        Sat, 3 Feb 2024 19:39:13 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFxd7o4cUoYcMb0m9Mf7DOaWIMCCbw99lExsgbGC35cYf6cILWbg/Ds6foY4FeFwyexxnKI
+X-Received: by 2002:ac8:7ed2:0:b0:42a:b61a:410f with SMTP id x18-20020ac87ed2000000b0042ab61a410fmr3124305qtj.56.1707017953590;
+        Sat, 03 Feb 2024 19:39:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707017953; cv=none;
+        d=google.com; s=arc-20160816;
+        b=LQTSFMZpyed2p5dJqbU1U6XDd7Tsr2pwAodiBgePkwzDZHr4hyS/lfCL8hmyTqvufi
+         QlBcsXOvU3yeDsDtmUCNF9jjryNkDqCyZGIE4yojdJrcwg+jZYG2HEgv89Vs2hrlaglS
+         d4Yu1nWn84VtOmpIAJmf3HpJv5y4KRwCiudZVP/dQ0hisIVzTz920X3MZCNdMIDvwLpu
+         w1nwT0hJSxp/j5cLDimPAV9diHc/0q/KiVfBx7sGMtJAzZpO4tpXTvMdvG4jc/A3cyHC
+         Dk6H7zozhz9IzLXGp98YRe53dVAdy/3KneI+87Ux1N+cIPCbBTaKRXwyjCd3gZFr0sdH
+         K6CQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=F5jJfHwQ9qnyrqw4mrYkmW/ssYo1pG0drtpKvqj2Ink=;
+        fh=S2Xb51qR31Etdd3sYIQ7sdlfx2/+e1+jXXktqXoVywQ=;
+        b=F8U2bwlEcEjw8qI3Y1/aPW2Lp6emJaScoZxDoYwM4hMoFHZthiJu8qkChsAGok6Bei
+         01tV20iFRI8RCHvoz4LCGmzPgRXR5uhxYpiHXs2WRIlcd2NCvi4rkWfOnbCCYdmIh/fv
+         Son87+RPEaefOHOO8DyNwZayKQd5q9BBd9RWUyv+HkQ4CWHzSJJ13hedxXOU7MNcEU0r
+         7zFj8DC92kLGy6cIOTMXvSj9zTjPMQv/Vr6/LDfBO0lx/5h0KY0jZ4UZjR8ZaszTxH8Z
+         YXXN0EdF+OnVua+FPFEgNlCCZ757cG1YO5UZdHUVbg3XIwJlB08fMefDUz5Ujbqh7lkE
+         9KAg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@goalwise.com header.s=s1 header.b=6R1UH8PX;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dupUZ6Fu;
+       spf=pass (google.com: domain of bounces+2558309-9eeb-nrprajan14=gmail.com@securemail.goalwise.com designates 167.89.18.14 as permitted sender) smtp.mailfrom="bounces+2558309-9eeb-nrprajan14=gmail.com@securemail.goalwise.com";
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=niyomoney.com
+Return-Path: <bounces+2558309-9eeb-nrprajan14=gmail.com@securemail.goalwise.com>
+Received: from s.xtrwknhz.outbound-mail.sendgrid.net (s.xtrwknhz.outbound-mail.sendgrid.net. [167.89.18.14])
+        by mx.google.com with ESMTPS id r5-20020a05622a034500b0042c178a1f60si1647996qtw.115.2024.02.03.19.39.13
+        for <nrprajan14@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 03 Feb 2024 19:39:13 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+2558309-9eeb-nrprajan14=gmail.com@securemail.goalwise.com designates 167.89.18.14 as permitted sender) client-ip=167.89.18.14;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@goalwise.com header.s=s1 header.b=6R1UH8PX;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=dupUZ6Fu;
+       spf=pass (google.com: domain of bounces+2558309-9eeb-nrprajan14=gmail.com@securemail.goalwise.com designates 167.89.18.14 as permitted sender) smtp.mailfrom="bounces+2558309-9eeb-nrprajan14=gmail.com@securemail.goalwise.com";
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=niyomoney.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=goalwise.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=F5jJfHwQ9qnyrqw4mrYkmW/ssYo1pG0drtpKvqj2Ink=;
+	b=6R1UH8PX6c4DnEKAzBBg9pTkxIuXYSjUm7F8KSPbyqW12y4fjDmTOi2Aji8fYYV/oFeD
+	GRAc3nsnungoX8a/xJBY6po+jmUCGF4oTgiRfhiQrhEN7G2FcOYOJRKjIR2LZRRN4f+cTP
+	0+pnjDq/qlzGPLF1Cm3JhevXpL9o5ztFV9HmmdqLGVplR3QWNAc+GGnNdU+URFhT+L9XGn
+	/F0+DotB8Unfo5EUoLYSgfqjWj1WYzrmYUlGWGcBcVC50EAv+oga9HYaFOS/ayIfGWDZOr
+	ADtUfvKiNWpsnL06ftD5OiGliz4IZaOK4Uolvcml/WWAJOmq+iQpkHVcUUsiZ/qw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=F5jJfHwQ9qnyrqw4mrYkmW/ssYo1pG0drtpKvqj2Ink=;
+	b=dupUZ6FurQTjK0rP2ZAWHTNmB77fmXp1QhOPmqkzEuhm+MaoekJBf8wB9DvebUKYRWvN
+	mew2gOS3+2CSSlYQHr0lKRKDP6tq+c0U+M5auu2UK5tz+MKr7Oi0UQHCaMdKDAp9ctdiy3
+	GntKlkPSkOQ8auKXVNdFf0NmDnKUxG0TA=
+Received: by filterdrecv-697c458b48-4w46p with SMTP id filterdrecv-697c458b48-4w46p-1-65BF06E0-46
+        2024-02-04 03:39:13.019902857 +0000 UTC m=+9449898.242054347
+Received: from MjU1ODMwOQ (unknown)
+	by geopod-ismtpd-10 (SG) with HTTP
+	id pkr56J1MSuGWCsSriFI2jg
+	Sun, 04 Feb 2024 03:39:12.650 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Sun, 04 Feb 2024 03:39:13 +0000 (UTC)
+From: Niyo Money Care <care@niyomoney.com>
+Mime-Version: 1.0
+Message-ID: <pkr56J1MSuGWCsSriFI2jg@geopod-ismtpd-10>
+Subject: [Niyo Money Investments] Invest for your 5th-Feb-24 SIP now :)
+Reply-To: Niyo Money Care <care@niyomoney.com>
+X-Feedback-ID: 2558309:SG
+X-SG-EID: 
+ =?us-ascii?Q?=2FnQwCDE2oRuehrVSGg=2FOsWmODCfKFzMdS8uLDqgfKdd2eqSCtFvP64MtXK2RYl?=
+ =?us-ascii?Q?Uz8UYjIfKVIA06EaBqdrWW=2FYgs8+kT3XV0d8vvo?=
+ =?us-ascii?Q?NgG3bFGDbGAyal0YR1K9yru0O0HukxEP45++srB?=
+ =?us-ascii?Q?EhxnCu=2FEPv2AT2msqrWFITliWciKRMxqXME4rCb?=
+ =?us-ascii?Q?mj7qxysaZzHJimnIYcE82tnM531y6XlQ8QlZW3+?=
+ =?us-ascii?Q?=2F0CbdMfBtmjL=2FnRrYE4apFWN2cSGrFmpra=2FP3K?=
+To: nrprajan14@gmail.com
+X-Entity-ID: wKitiS/SZKpqr93rt84oLQ==
+
+<!DOCTYPE html><html lang=3D"en"><head><title>Goalwise</title><meta charset=
+=3D"utf-8"><meta name=3D"viewport" content=3D"width=3Ddevice-width, initial=
+-scale=3D1"><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" /><l=
+ink href=3D"https://fonts.googleapis.com/css?family=3DMontserrat" rel=3D"st=
+ylesheet"><link href=3D"https://fonts.googleapis.com/css?family=3DRoboto" r=
+el=3D"stylesheet"><style type=3D"text/css">@import url('https://fonts.googl=
+eapis.com/css?family=3DVarela+Round');@import url('https://fonts.googleapis=
+.com/css?family=3DMontserrat');@import url('https://fonts.googleapis.com/cs=
+s?family=3DRoboto');.img-circle{border-radius:50%;height:100px;width:100px;=
+background-color:#7F3F97}@media screen and (max-width:480px){div[class=3D"d=
+emo1"]{width:100% !important;max-width:600px !important}table[class=3D"demo=
+"]{width:100% !important}td[class=3D"section-padding1"]{padding:4px 0px 14p=
+x 29px !important}td[class=3D"section-padding2"]{padding:4px 3px 14px 29px =
+!important}td[class=3D"section-padding3"]{padding:4px 107px 14px 29px !impo=
+rtant}td[class=3D"section-padding4"]{padding:29px 0px 8px 29px !important}t=
+d[class=3D"section-padding5"]{padding:8px 0px 70px 29px !important}td[class=
+=3D"section-padding6"]{padding:12px 0px 0px 29px !important}td[class=3D"sec=
+tion-padding7"]{padding:15px 64px 0px 10px !important}td[class=3D"section-p=
+adding8"]{padding:10px 129px 0px 0px !important;text-align:left}td[class=3D=
+"section-padding9"]{padding:12px 10px 0px 29px !important}table[class=3D"de=
+mo2"]{width:100% !important}}</style></head><body style=3D"margin: 20px ; p=
+adding: 20px 0;"><style type=3D"text/css">@import url('https://fonts.google=
+apis.com/css?family=3DVarela+Round');@import url('https://fonts.googleapis.=
+com/css?family=3DMontserrat');@import url('https://fonts.googleapis.com/css=
+?family=3DRoboto');.img-circle{border-radius:50%;height:100px;width:100px;b=
+ackground-color:#7F3F97}@media screen and (max-width:480px){div[class=3D"de=
+mo1"]{width:100% !important;max-width:600px !important}table[class=3D"demo"=
+]{width:100% !important}td[class=3D"section-padding1"]{padding:4px 0px 14px=
+ 29px !important}td[class=3D"section-padding2"]{padding:4px 3px 14px 29px !=
+important}td[class=3D"section-padding3"]{padding:4px 107px 14px 29px !impor=
+tant}td[class=3D"section-padding4"]{padding:29px 0px 8px 29px !important}td=
+[class=3D"section-padding5"]{padding:8px 0px 70px 29px !important}td[class=
+=3D"section-padding6"]{padding:12px 0px 0px 29px !important}td[class=3D"sec=
+tion-padding7"]{padding:15px 64px 0px 10px !important}td[class=3D"section-p=
+adding8"]{padding:10px 129px 0px 0px !important;text-align:left}td[class=3D=
+"section-padding9"]{padding:12px 10px 0px 29px !important}table[class=3D"de=
+mo2"]{width:100% !important}}</style><div class=3D"demo1" style=3D"width:10=
+0%;max-width:600px;padding-bottom: 20px;margin:0 auto"><table align=3D"cent=
+er" style=3D"background-color:#3399ff" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"width:100%;" class=3D"demo"><tr><td align=3D"center" =
+style=3D"padding:11px 0px 11px 0px; width:600px;height:50px;" class=3D"sect=
+ion-padding"> <img style=3D"width:86px;height:50px" src=3D"https://alphafro=
+nt.s3-ap-southeast-1.amazonaws.com/app_resources/niyomoney_logo_white.png" =
+alt=3D"Logo" /></td></tr></table><table align=3D"center" bgcolor=3D"#FFFFFF=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;"><t=
+r><td align=3D"center" style=3D"padding:26px 0px 14px 0px; width:600px;heig=
+ht:50px;" class=3D"section-padding"> <img style=3D"height:86px; width:111px=
+;" src=3D"https://s3-ap-southeast-1.amazonaws.com/alphafront/email_assets/s=
+uccess-starfish-03-1.png" alt=3D"Logo" /></td></tr><tr><td align=3D"center"=
+ style=3D"padding: 0px 0 30px 0;" class=3D"section-padding"><h4 style=3D"fo=
+nt-family: Arial ;font-size:22px; font-weight:bold;text-align:center ; max-=
+width: 430px;color: #02002e ; margin:0px;">SIP Payment Link</h4></td></tr><=
+tr><td align=3D"left" style=3D"padding: 20px 20px 14px 20px;" class=3D"sect=
+ion-padding"><h4 style=3D"font-family:Arial;font-weight: 400; font-size:12p=
+x; text-align:left ; color: #666666 ; margin: 0px;">Hi Ramachandran  Pandia=
+rajan,</h4></td></tr><tr><td align=3D"left" style=3D"padding:10px 20px 18px=
+ 20px;" class=3D"section-padding"><h4 style=3D"font-family:Arial;font-weigh=
+t: 400;letter-spacing:0.5px; font-size:12px; text-align:left ; color: #6666=
+66 ; margin: 0px;line-height: 1.67;">Trust you are doing well!</h4><h4 styl=
+e=3D"font-family:Arial;font-weight: 400;letter-spacing:0.5px; font-size:12p=
+x; text-align:left ; color: #666666 ; margin: 0px;line-height: 1.67;">Since=
+ your NACH mandate (auto-debit facility) is not registered with us, we are =
+providing a link via which you can pay for this SIP through your Niyo Money=
+ account.</h4><h4 style=3D"font-family:Arial;font-weight: 400;letter-spacin=
+g:0.5px; font-size:12px; text-align:left ; color: #666666 ; margin: 0px;lin=
+e-height: 1.67;padding-top: 10px;">Please click on the link below to invest=
+ for your 5th-Feb-24 SIP for Emergency Fund goal(s). <span style=3D"font-we=
+ight:bold;">Please make the payment before 12 noon on 5th-Feb-24.</span></h=
+4></td></tr><tr><td align=3D"center" style=3D"padding: 10px 0px 19px 0px;" =
+class=3D"section-padding"> <a href=3Dhttps://secure.niyomoney.com/dashboard=
+/pg-sip style=3D"font-family: Arial;word-wrap:break-word;border-radius:19px=
+;padding: 10px 15px;font-weight: 400; font-size:14px; text-align:center ;ba=
+ckground: #3399ff;width: 180px;display:block;color: #666666 ; margin: 0px;c=
+olor: #fff;text-decoration:none;"> Click here to pay now</a></td></tr><tr><=
+td align=3D"left" style=3D"padding:10px 20px 18px 20px;" class=3D"section-p=
+adding"><h4 style=3D"font-family:Arial;font-weight: 400;letter-spacing:0.5p=
+x; font-size:12px; text-align:left ; color: #666666 ; margin: 0px;line-heig=
+ht: 1.67;"><a href=3D"https://secure.goalwise.com/site/my-account">Login to=
+ download and submit</a> the NACH mandate from your account. The NACH manda=
+te will help you automate your SIPs and enable the Portfolio Rebalance feat=
+ure.</h4></td></tr><tr>
+    <td align=3D"center" style=3D"padding: 8px 0px 8px 0px;" class=3D"secti=
+on-padding3">
+        <h4
+            style=3D"font-family: Open sans, Montserrat,Roboto,sans-serif;f=
+ont-size:12px; text-align:center;color: #666666 ; margin: 0px;font-weight: =
+400;">
+            Should you have any queries, you can:</h4>
+    </td>
+</tr>
+<tr>
+    <td>
+        <table align=3D"center" class=3D"demo2" bgcolor=3D"#FFFFFF" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+            <tr>
+                <td align=3D"left" style=3D"padding: 12px 0px 10px 41px;dis=
+play: inline-block;" class=3D"section-padding9">
+                    <img style=3D"height:10px; width:13px;"
+                        src=3D"https://s3-ap-southeast-1.amazonaws.com/alph=
+afront/email_assets/message.png" alt=3D"Logo">
+                    <h4
+                        style=3D"font-family: Open sans, Montserrat,Roboto,=
+sans-serif;padding: 0px 9px 0px 4px;font-size:12px;line-height:1.67;font-we=
+ight: 400;display: inline;color: #666666 ; margin: 0px;text-align:center">
+                        Email</h4>
+                </td>
+                <td align=3D"left" style=3D"padding: 8px 51px 10px 0px;" cl=
+ass=3D"section-padding8">
+                    <h4
+                        style=3D"font-family: Open sans, Montserrat,Roboto,=
+sans-serif;font-size:13px;font-weight: 400;margin: 0px;text-align:center;">
+                        <a href=3D"care@goalwise.com"
+                            style=3D"color: #333333;font-family: Open sans,=
+ Montserrat,Roboto,sans-serif;font-weight: 400;">care@niyomoney.com</a>
+                    </h4>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>
+        <table bgcolor=3D"#FFFFFF" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%;">
+            <tr>
+                <td align=3D"left" style=3D"padding:10px 50px 8px 50px;" cl=
+ass=3D"section-padding4">
+                    <h4
+                        style=3D"font-family: Open sans, Montserrat,Roboto,=
+sans-serif;font-size:12px;width:84px;font-weight: 400;height:10px;display: =
+inline;color: #333333;; margin: 0px;text-align: left;">
+                        Happy investing!</h4>
+                </td>
+            </tr>
+            <tr>
+                <td align=3D"left" style=3D"padding:10px 50px 20px 50px;" c=
+lass=3D"section-padding5">
+                    <h4
+                        style=3D"font-family: Open sans, Montserrat,Roboto,=
+sans-serif;font-size:12px;width:84px;font-weight: 400;height:10px;display: =
+inline;color: #333333; margin: 0px;text-align: left;">
+                        Niyo Money Care</h4>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+<table bgcolor=3D"#FFFFFF" border=3D"0" class=3D"wrapper" cellpadding=3D"0"=
+ cellspacing=3D"0"
+    style=3D"width:100% ; margin:15px auto;">
+    <tr>
+        <td>
+            <table align=3D"center" bgcolor=3D"#FFFFFF" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"width:100%;">
+                <tr>
+                    <td align=3D"center" style=3D"padding: 0px 0px 0px 20px=
+;" class=3D"section-padding"> <a
+                            href=3D"https://play.google.com/store/apps/deta=
+ils?id=3Dcom.goalwise"><img
+                                style=3D"height:216px; width:128px;"
+                                src=3D"https://s3-ap-southeast-1.amazonaws.=
+com/alphafront/email_assets/phone1.0.png"
+                                alt=3D"Logo"></a></td>
+                    <td align=3D"center" style=3D"display: inline-block;pad=
+ding: 10px 0px 0px 20px;">
+                        <h4
+                            style=3D"font-family: Arial;font-size:18px; fon=
+t-weight: bold;line-height: 1.22;text-align: left;color: #02002e; margin:0p=
+x;">
+                            Invest on the go with the Niyo Money app</h4>
+                        <h4
+                            style=3D"font-family:Arial;font-size:10px; line=
+-height: 1.4;text-align: left;font-weight: 400;color: #666666;padding-top: =
+12px; margin:0px;">
+                            You can now sign up, complete your KYC and inve=
+st via SIPs <br>and lumpsum through the Niyo
+                            Money App. You can also track your <br>progress=
+ towards each of your goals.</h4>
+                        <h4 style=3D"text-align: left;padding-top: 20px; ma=
+rgin:0px;"> <a style=3D"text-decoration:none;"
+                                href=3D"https://play.google.com/store/apps/=
+details?id=3Dcom.goalwise"><img
+                                    style=3D"height:38px; width:110px;"
+                                    src=3D"https://s3-ap-southeast-1.amazon=
+aws.com/alphafront/email_assets/playstore.png"
+                                    alt=3D"Logo"> </a><a style=3D"text-deco=
+ration:none;"
+                                href=3D"https://itunes.apple.com/us/app/goa=
+lwise-investment-tracker/id1295003275?ls=3D1&mt=3D8"><img
+                                    style=3D"height:38px; width:110px;"
+                                    src=3D"https://s3-ap-southeast-1.amazon=
+aws.com/alphafront/email_assets/appstore.png"
+                                    alt=3D"Logo"></a></h4>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<table bgcolor=3D"#FFFFFF" border=3D"0" class=3D"wrapper" cellpadding=3D"0"=
+ cellspacing=3D"0"
+    style=3D"width:100% ; margin:15px auto;">
+    <tr>
+        <td align=3D"center" style=3D"padding:20px 0px 13px 0px;" class=3D"=
+section-padding">
+            <h4
+                style=3D"font-family: Open sans, Montserrat,Roboto,sans-ser=
+if;font-size:12px;line-height: 1.67;color: #666666; font-weight: 400;margin=
+: 0px;">
+                Learn more about <span style=3D"color: #555ac8;"><a href=3D=
+"https://www.goalwise.com/how-goalwise-works"
+                        style=3D"text-decoration: none;"> Niyo Money</a> </=
+span> or visit our <span
+                    style=3D"color: #555ac8;"><a href=3D"http://blog.goalwi=
+se.com/"
+                        style=3D"text-decoration: none;">Blog</a></span></h=
+4>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table align=3D"center" class=3D"demo3" bgcolor=3D"#FFFFFF" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0"
+                style=3D"width:100%;">
+                <tr>
+                    <td align=3D"right" style=3D"padding: 0px 37px 0px 6px;=
+" class=3D"section-padding11"> <a
+                            href=3D"https://www.facebook.com/goalwise/"><im=
+g style=3D"height:40px; width:40px;"
+                                src=3D"https://s3-ap-southeast-1.amazonaws.=
+com/alphafront/email_assets/facebook.png"
+                                alt=3D"Logo"></a></td>
+                    <td align=3D"left" style=3D"padding: 0px 17px 0px 30px;=
+" class=3D"section-padding11"> <a
+                            href=3D"https://twitter.com/goalwise"><img styl=
+e=3D"height:40px; width:40px;"
+                                src=3D"https://s3-ap-southeast-1.amazonaws.=
+com/alphafront/email_assets/twitter.png"
+                                alt=3D"Logo"></a></td>
+                </tr>
+                <tr>
+                    <td align=3D"right" style=3D"padding: 0px 27px 14px 0px=
+;" class=3D"section-padding11">
+                        <h4
+                            style=3D"font-family: Open sans, Montserrat,Rob=
+oto,sans-serif;font-size:10px;line-height:2;color: #666666; margin: 0px;fon=
+t-weight: 400;text-align: right; color: #666666;">
+                            5 <img style=3D"height:9px; width:9px;"
+                                src=3D"https://s3-ap-southeast-1.amazonaws.=
+com/alphafront/email_assets/star-1.png"
+                                alt=3D"Logo"> rated service</h4>
+                    </td>
+                    <td align=3D"left" style=3D"padding: 0px 0px 14px 47px;=
+" class=3D"section-padding11">
+                        <h4
+                            style=3D"font-family: Open sans, Montserrat,Rob=
+oto,sans-serif;font-size:10px;line-height:2;font-weight: 400;color: #666666=
+; margin: 0px;text-align: left;color: #666666;">
+                            Follow</h4>
+                    </td>
+                </tr>
+            </table>
+    <tr>
+        <td>
+            <table bgcolor=3D"#FFFFFF" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"width:100%;">
+                <tr>
+                    <td style=3D"padding: 14px 55px 20px 55px; width: 100%;=
+" class=3D"section-padding10">
+                        <h1 style=3D"border-top: 1px solid #ddd; margin:0 6=
+px;"></h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style=3D"padding:20px 55px 9px 53px;" class=3D"sect=
+ion-padding10">
+                        <h4
+                            style=3D"font-family: Open sans, Montserrat,Rob=
+oto,sans-serif;font-size:8px;opacity: 0.6;line-height:1.5;color: rgba(102, =
+102, 102, 0.6); margin: 0px;text-align: left;font-weight: 400;">
+                            Why am I getting an email from Niyo Money inste=
+ad of Goalwise? </br>
+                            Goalwise is now renamed as Niyo Money post its =
+merger with Niyo. Everything else, including
+                            your investments, remain as it is.
+                            <a href=3D"https://www.goalwise.com/blog/goalwi=
+se-is-changing-to-niyo-money/"
+                                style=3D"color:#0AF;text-decoration: none;"=
+> Read here for more details</a>.
+                        </h4>
+                    </td>
+                <tr>
+                <tr>
+                    <td style=3D"padding:9px 55px 9px 53px;" class=3D"secti=
+on-padding10">
+                        <h4
+                            style=3D"font-family: Open sans, Montserrat,Rob=
+oto,sans-serif;font-size:8px;opacity: 0.6;line-height:1.5;font-weight: 400;=
+color: rgba(102, 102, 102, 0.6); margin: 0px;text-align: left;">
+                            This email is sent on behalf of Alphafront Fins=
+erv Pvt Ltd. CIN-U74140KA2015PTC145243, ARN-103141, Registered with the Sec=
+urities and Exchange Board of India (SEBI) as a Non-Individual Investment A=
+dvisor (RIA Certification no INA000006651, Validity of registration: Perpet=
+ual), BASL Membership Certificate No: BASL1640. Registered Address: 10th Fl=
+oor, G-1003 B-G1004, Gamma Block, Sigma Soft Tech Park, Varthur Hobli, Whit=
+efield Bangalore, Karnataka - 560066, Contact number : +91-9606523161
+                            <br></br>
+                            Principal & Compliance Officer: Mr. Swapnil Bha=
+skar, Telephone: +91-8239999821, E-mail: operations@alphafront.com
+<br> </br>
+Grievance Officer : Mr. Rahul Mahajan, Telephone:  +91-9606346131, E-mail: =
+grievance@alphafront.com
+<br> </br>
+SEBI Regional Office: 2nd Floor, Jeevan Mangal Building, No.4, Residency Ro=
+ad, Bengaluru - 560025, Karnataka.Telephone: +91-080-22222262/ 22222264/ 22=
+22 2283, E-mail: bangalore-lo@sebi.gov.in
+                        </h4>
+                    </td>
+                <tr>
+                <tr>
+                    <td style=3D"padding:9px 55px 9px 53px;" class=3D"secti=
+on-padding10">
+                        <h4
+                            style=3D"font-family: Open sans, Montserrat,Rob=
+oto,sans-serif;font-size:8px;opacity: 0.6;font-weight: 400;line-height:1.5;=
+color: rgba(102, 102, 102, 0.6); margin: 0px;text-align: left;">
+                            Disclaimer: Investment in securities market are=
+ subject to market risks. Read all the related documents carefully before i=
+nvesting. Registration granted by SEBI, membership of BASL and certificatio=
+n from NISM in no way guarantee performance of the intermediary or provide =
+any assurance of returns to investors.
+                        </h4>
+                    </td>
+                <tr>
+                <tr>
+                    <td style=3D"padding:9px 55px 9px 53px;" class=3D"secti=
+on-padding10">
+                        <h4
+                            style=3D"font-family: Open sans, Montserrat,Rob=
+oto,sans-serif;font-size:8px;opacity: 0.6;font-weight: 400;line-height:1.5;=
+color: rgba(102, 102, 102, 0.6); margin: 0px;text-align: left;">
+                            Please add care@niyomoney.com to your safe send=
+er list to receive all communications from us
+                            including your monthly statements.
+                        </h4>
+                    </td>
+                <tr>
+                <tr>
+                    <td style=3D"padding:0px 55px 67px 53px;" class=3D"sect=
+ion-padding10">
+                        <h4
+                            style=3D"font-family: Open sans, Montserrat,Rob=
+oto,sans-serif;font-size:8px;font-weight: 400;opacity: 0.6;line-height:1.5;=
+opacity: 0.6;color: rgba(102, 102, 102, 0.6); margin: 0px;text-align: left;=
+">
+                            <span style=3D"color: #555ac8;"><a href=3D"http=
+s://goalwise.com"
+                                    style=3D"word-wrap:break-word;color:#0A=
+F;font-weight:400;text-decoration:none">Unsubscribe</a></span>
+                            Email us at <a href=3D"care@niyomoney.com"
+                                style=3D"color: rgba(102, 102, 102, 0.6);te=
+xt-decoration: none;">care@niyomoney.com</a>
+                            with a subject line "unsubscribe" from your reg=
+istered email ID.</h4>
+                    </td>
+                <tr>
+            </table>
+        </td>
+    </tr>
+    </td>
+    </tr>
+</table>
+</div>
+<img src=3D"http://email.goalwise.com/wf/open?upn=3DyaHs0DKbyKr2zrVHV0mKHS7=
+VKdUzvmr3KC-2F6-2F-2Fl4xEB-2FPtoC-2FXVz107-2BdRmMphCO5A3ya6bEDpaq-2FvD9If-2=
+Bgl0BMVSTQwm-2B2A2-2FPgFilAQ6VA2Vn8SgNgGfk-2Bibb2Znp-2BoCjaNxN3wG-2BJf2WkSw=
+w06ZmxvHkhhPfIn-2FdTc-2BKmj2zi8xlr09c6p12AKEdTMW6MP911AnOoqiYSvsSwBX5JspMDu=
+tJAuqCep5FZmUQpbQ-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+
+</html>
