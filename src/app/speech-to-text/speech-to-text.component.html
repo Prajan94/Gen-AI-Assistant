@@ -13,19 +13,14 @@
             <div class="chatbot-message">
                <div *ngIf="!hideBotMessage" class="bot-message">Hello! How can I assist you today?</div>
             </div>
+            <!-- <div class="bot-message">{{response}}</div> -->
              <div *ngFor="let message of aiMessageArray;index as i" class="chatbot-message">
-                <div class="bot-message">{{message}}</div>
                 <div class="bot-message">{{humanMessageArray[i]}}</div>
+                <div class="bot-message">{{message}}</div>
              </div>
-             <div *ngFor="let chunk of recordedChunks">
-                <audio controls="false">
-                  <source [src]="chunk" type="audio/wav" />
-                </audio>
-                <br />
-              </div>
              <mat-spinner *ngIf="isLoading" style="margin:0 auto; position: relative;" ></mat-spinner>
           </div>
-         <div class="chatbot-input" style="float: right"> <button class="record_btn" (click)="onMicClick()"></button> </div>
+         <div> <button [ngClass]="{ recording: isRecording }" style="float: right; margin-right: 1rem;" class="record_btn" (click)="onMicClick()"></button> </div>
       </div>
    </body>
 </html>

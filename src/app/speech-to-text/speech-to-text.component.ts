@@ -2,9 +2,8 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonServiceService } from '../common-service.service';
 import { Router } from '@angular/router';
 import RecordRTC from 'recordrtc';
-// import * as RecordRTC from '../../assets/RecordRTC.js';
-// import RecordRTC from 'asset/recordrtc.js';
 import { DomSanitizer } from '@angular/platform-browser';
+import { saveAs, FileSaverOptions } from 'file-saver';
 
 const type = {
   type: 'audio',
@@ -32,17 +31,23 @@ export class SpeechToTextComponent {
   constructor(
     private commonService : CommonServiceService, private route: Router, private sanitizer: DomSanitizer, private ref: ChangeDetectorRef) { }
     askAi(blob: any) {
-      this.hideBotMessage = true;
-      this.isLoading = true;
-      this.aiMessageArray.push(this.aiAuery);
+      // this.aiMessageArray.push(this.aiAuery);
       this.commonService.voiceAssistant(blob).subscribe(item => {
+      this.aiMessageArray.push(item[1]);
       this.response = item;
-      this.humanMessageArray.push(this.response);
+      this.humanMessageArray.push(item[0]);
       this.isLoading = false;
+      this.ref.detectChanges();
     }, ((error: any) => {
-      this.isLoading = false;
-      console.log("Error from flask server --->" + error);
-      this.response = "Network Error occured, please try again";
+      if(error.status == 200) {
+        this.response = error.error.text;
+        this.sanitizer.bypassSecurityTrustStyle(this.response);
+        this.isLoading = false;
+      } else {
+        this.isLoading = false;
+        console.log("Error from flask server --->" + error);
+        this.response = "Network Error occured, please try again";
+      }
     }))
   }
 
@@ -50,31 +55,23 @@ export class SpeechToTextComponent {
     this.route.navigateByUrl("home");
   }
 
-  // onMicClick() {
-  //   this.isRecording = !this.isRecording;
-  //   if (this.isRecording) {
-  //     this.startRercording();
-  //   } else {
-  //     this.stopRercording();
-  //   }
-  // }
   onMicClick() {
-    navigator.mediaDevices.getUserMedia({
-      audio: true
-  }).then(async (stream) => {
-      let recorder = new RecordRTC(stream, {
-          type: 'audio'
-      });
-      recorder.startRecording();
-  
-      const sleep = (m: number | undefined) => new Promise(r => setTimeout(r, m));
-      await sleep(3000);
-  
-      recorder.stopRecording(() => {
-          let blob = recorder.getBlob();
-          this.askAi(blob);
-      });
-  });
+    this.isRecording = !this.isRecording
+    if(this.isRecording) {
+      navigator.mediaDevices.getUserMedia({
+        audio: true
+    }).then(async (stream) => {
+        this.recorder = new RecordRTC(stream, {
+            type: 'audio'
+        });
+        this.recorder.startRecording();
+    
+        // const sleep = (m: number | undefined) => new Promise(r => setTimeout(r, m));
+        // await sleep(10000);
+    });
+    } else {
+      this.stopRercording();
+    }
     // this.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     // this.recorder = new RecordRTC(this.stream, {type: 'audio/wav'});
     // this.recorder.ondataavailable = (event: { data: any; }) => {
@@ -91,9 +88,16 @@ export class SpeechToTextComponent {
     // this.recorder.start();
   }
   stopRercording() {
-    this.recorder.stop();
-    let blob = new Blob(this.recordedChunks, { type: this.recorder.mimeType });
-    this.askAi(blob);
+    this.hideBotMessage = true;
+    this.isLoading = true;
+    this.recorder.stopRecording(() => {
+      let blob = this.recorder.getBlob();
+      // saveAs(blob, "audio.webm");
+      this.askAi(blob);
+  });
+    // this.recorder.stop();
+    // let blob = new Blob(this.recordedChunks, { type: this.recorder.mimeType });
+    // this.askAi(blob);
     // this.recorder.stop(() => {
     //   this.ref.detectChanges();
     //   debugger;
