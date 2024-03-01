@@ -197,42 +197,18 @@ def get_syn_gen_data():
 )
  return json.dumps(synthetic_results, default=vars)
 
-@app.route('/api/voice', methods=['GET', 'POST'])
+@app.route('/api/voice', methods=['POST'])
 def get_speechTotext_data():
- if 'audio' in request.files:
-            file = request.files['audio']
-            # Get the file suffix based on the mime type.
-            # print(file.mimetype)
-            extname = file.mimetype
-            if not extname:
-                abort(400)
-
-            # Test here for allowed file extensions.
-
-            # Generate a unique file name with the help of consecutive numbering.
-            i = 1
-            while True:
-                dst = os.path.join(
-                    current_app.instance_path,
-                    current_app.config.get('UPLOAD_FOLDER', 'uploads'),
-                    secure_filename(f'audio_record_{i}{extname}'))
-                if not os.path.exists(dst): break
-                i += 1
-
-            # Save the file to disk.
-            file.save(dst)
-            model_audio = open("dst", "rb")
-            client = OpenAI()
-            transcript = client.audio.transcriptions.create(
-            model="whisper-1",
-            file=model_audio,
-            response_format="text",
-            )
-            print(transcript)
-            return jsonify(transcript)
-            # return make_response('', 200)
-        
- abort(400)
+  queryVoice = request.files['audio'].read()
+  with open("audio.webm", "wb") as file:
+    file.write(queryVoice)
+  model_audio = open("audio.webm", "rb")
+  client = OpenAI() 
+  transcript = client.audio.transcriptions.create( model="whisper-1", file=model_audio, response_format="text")
+  llm = ChatOpenAI()
+  response = llm.invoke(transcript)
+  data = [transcript, response.content]
+  return data
  
 if __name__ == '__main__':
     app.run()
