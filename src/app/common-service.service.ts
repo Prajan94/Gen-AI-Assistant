@@ -34,9 +34,11 @@ export class CommonServiceService {
     return this.http.get<string>('http://127.0.0.1:5000/api/syngen', {params: params});
   }
 
-  voiceAssistant(audio: any): Observable<any>  {
-    const formdata = new FormData();
-    formdata.append("audio", audio);
+  voiceAssistant(blob: any): Observable<any>  {
+    const formdata = new FormData()
+    formdata.append("audio", blob)
+    // const params = new HttpParams()
+    // .set('query', "voice")
     return this.http.post('http://127.0.0.1:5000/api/voice', formdata);
 
   }
