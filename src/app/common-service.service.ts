@@ -37,10 +37,34 @@ export class CommonServiceService {
   voiceAssistant(blob: any): Observable<any>  {
     const formdata = new FormData()
     formdata.append("audio", blob)
-    // const params = new HttpParams()
-    // .set('query', "voice")
     return this.http.post('http://127.0.0.1:5000/api/voice', formdata);
 
   }
 
+  htmlGeneration(file: any): Observable<any>  {
+    const formdata = new FormData()
+    formdata.append("file", file)
+    return this.http.post('http://127.0.0.1:5000/api/htmlcode', formdata);
+
+  }
+
+  unitTestCase(query: any): Observable<any>{
+    let singleQuery = query.replace(/"/g, "'");
+    let stringQuery = singleQuery.toString()
+    const params = new HttpParams()
+    .set('query', stringQuery)
+    return this.http.get('http://127.0.0.1:5000/api/testCase', {params: params});
+  }
+
+  pdfChatBot(query: any): Observable<any>{
+    const params = new HttpParams()
+    .set('query', query)
+    return this.http.get('http://127.0.0.1:5000/api/pdfChatBot', {params: params});
+  }
+
+  serverAsst(query: any): Observable<any>{
+    const params = new HttpParams()
+    .set('query', query)
+    return this.http.get('http://127.0.0.1:5000/api/serverAssistant', {params: params});
+  }
 }

@@ -3,7 +3,7 @@ import { CommonServiceService } from '../common-service.service';
 import { Router } from '@angular/router';
 import RecordRTC from 'recordrtc';
 import { DomSanitizer } from '@angular/platform-browser';
-import { saveAs, FileSaverOptions } from 'file-saver';
+// import { saveAs, FileSaverOptions } from 'file-saver';
 
 const type = {
   type: 'audio',

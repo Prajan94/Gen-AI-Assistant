@@ -15,6 +15,10 @@ import { FigmaCodeGeneratorComponent } from './figma-code-generator/figma-code-g
 import { SyntheticDataGenComponent } from './synthetic-data-gen/synthetic-data-gen.component';
 import { HomeComponent } from './home/home.component';
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
+import { ImageToHtmlComponent } from './image-to-html/image-to-html.component';
+import { TestCaseGeneratorAIComponent } from './test-case-generator-ai/test-case-generator-ai.component';
+import { PdfChatBotComponent } from './pdf-chat-bot/pdf-chat-bot.component';
+import { ServerLogAssistantComponent } from './server-log-assistant/server-log-assistant.component';
 /* Imports for Material UI */
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatInputModule} from '@angular/material/input';
@@ -49,7 +53,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     FigmaCodeGeneratorComponent,
     SyntheticDataGenComponent,
     HomeComponent,
-    SpeechToTextComponent
+    SpeechToTextComponent,
+    ImageToHtmlComponent,
+    TestCaseGeneratorAIComponent,
+    PdfChatBotComponent,
+    ServerLogAssistantComponent
   ],
   bootstrap: [AppComponent],
   providers: [

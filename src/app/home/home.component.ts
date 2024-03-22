@@ -36,4 +36,21 @@ constructor(private route: Router) {
     this.route.navigateByUrl("speechAI");
     // this.tileSelected = false;
   }
+
+  gotoImageToHtmlAI() {
+    this.route.navigateByUrl("htmlAI");
+  }
+
+  gotoUnitTestAI() {
+    this.route.navigateByUrl("unitTestAI");
+  }
+
+  gotoPdfChatBot() {
+    this.route.navigateByUrl("pdfChatBot");
+  }
+  
+  gotoServerLogAsst() {
+    this.route.navigateByUrl("serverLogAss");
+  }
+
 }

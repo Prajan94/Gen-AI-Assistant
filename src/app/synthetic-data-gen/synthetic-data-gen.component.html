@@ -6,19 +6,19 @@
        <div class="chatbot-container">
           <div class="chatbot-header">
              <input type="text" style="float:left" [(ngModel)]="rows" placeholder="Number of rows...">
-             <h2>Medical Billing Data Generator
+             <h2>Synthetic Data Generator
                <button style="float: right;"class="btn btn-secondary" (click)="gotoHome()">Go Back</button>
              </h2>
           </div>
           <div class="chatbot-body">
              <div class="chatbot-message">
-                <div *ngIf="!hideBotMessage" class="bot-message">Hello! I can generate simulaion data for patient medical billing based on the below sample 
-                    <br><span>Patient ID: 123456</span><br>
-                    <span>Patient Name: John Doe,</span><br>
-                    <span>Diagnosis Code: J20.9</span><br>
-                    <span>Procedure Code: 99203</span><br>
-                    <span>Total Charge: $500</span><br>
-                    <span>Insurance Claim Amount: $350</span><br>
+                <div *ngIf="!hideBotMessage" class="bot-message">Hello! I can generate simulaion data for account based on the below sample 
+                    <br><span>Transaction Date and Time: 2024-03-12 11:15:45</span><br>
+                    <span>Account Holder Name: Mike Brown,</span><br>
+                    <span>Account Number: 123456789</span><br>
+                    <span>Transaction Type: Purchase</span><br>
+                    <span>Transaction Amount: $500.00</span><br>
+                    <span>Merchant Number: 654987321</span><br>
                     <p>Please mention number of rows you want in the text box to get appropriate results.</p>
                 </div>
                 <div *ngIf="errMsg">

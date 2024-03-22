@@ -1,0 +1,27 @@
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="chatbot-container">
+         <div class="chatbot-header">
+            <h2>Image to Html code generator
+              <button style="float: right;"class="btn btn-secondary" (click)="gotoHome()">Go Back</button>
+            </h2>
+         </div>
+         <div class="chatbot-body">
+            <div class="chatbot-message">
+               <div *ngIf="!hideBotMessage" class="bot-message">Hello! How can I assist you today?</div>
+            </div>
+             <div *ngFor="let message of aiMessageArray;index as i" class="chatbot-message">
+                <div class="bot-message" style="white-space: pre; text-wrap: wrap;">{{message}}</div>
+                <div class="bot-message" style="white-space: pre; text-wrap: wrap;">{{humanMessageArray[i]}}</div>
+             </div>
+             <mat-spinner *ngIf="isLoading" style="margin:0 auto; position: relative;" ></mat-spinner>
+          </div>
+          <div class="chatbot-input"><input type="file" (change)="onChange($event)"/>
+         <!-- <div class="chatbot-input"> <input type="text" [(ngModel)]="aiAuery" placeholder="Type your message...">  -->
+            <button (click)="askAi()">Generate Code</button> </div>
+      </div>
+   </body>
+</html>

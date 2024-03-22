@@ -1,0 +1,29 @@
+<html>
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <div class="chatbot-container">
+          <div class="chatbot-header">
+             <h2>PDF Chatbot
+              <button style="float: right;"class="btn btn-secondary" (click)="gotoHome()">Go Back</button>
+             </h2>
+          </div>
+          <div class="chatbot-body">
+            <div class="chatbot-message">
+              <div *ngIf="!hideBotMessage" class="bot-message"><p>How Can I help you today?</p></div>
+            </div>
+            <div *ngIf="errMsg">
+                {{errMsg}}
+            </div>
+             <div *ngFor="let message of aiMessageArray;index as i" class="chatbot-message">
+                <div class="bot-message">{{message}}</div>
+                <div class="bot-message" style="white-space: pre; text-wrap: wrap;">{{humanMessageArray[i]}}</div>
+                <!-- <div class="bot-message" style="white-space: pre;">{{response}}</div> -->
+             </div>
+             <mat-spinner *ngIf="isLoading" style="margin:0 auto; position: relative;" ></mat-spinner>
+          </div>
+          <div class="chatbot-input"> <input type="text" [(ngModel)]="aiAuery" placeholder="Type your query..."> <button (click)="askAi()">Answer Me</button> </div>
+       </div>
+    </body>
+ </html>

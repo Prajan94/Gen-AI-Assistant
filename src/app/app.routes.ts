@@ -6,6 +6,10 @@ import { FigmaCodeGeneratorComponent } from './figma-code-generator/figma-code-g
 import { SyntheticDataGenComponent } from './synthetic-data-gen/synthetic-data-gen.component';
 import { HomeComponent } from './home/home.component';
 import { SpeechToTextComponent } from './speech-to-text/speech-to-text.component';
+import { ImageToHtmlComponent } from './image-to-html/image-to-html.component';
+import { TestCaseGeneratorAIComponent } from './test-case-generator-ai/test-case-generator-ai.component';
+import { PdfChatBotComponent } from './pdf-chat-bot/pdf-chat-bot.component';
+import { ServerLogAssistantComponent } from './server-log-assistant/server-log-assistant.component';
 
 export const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -13,7 +17,11 @@ export const routes: Routes = [
   {path:"emailAI", component: EmailQueryComponent},
   {path:"figmaAI", component: FigmaCodeGeneratorComponent},
   {path: "synGenAI", component: SyntheticDataGenComponent},
-  {path: "speechAI", component: SpeechToTextComponent}
+  {path: "speechAI", component: SpeechToTextComponent},
+  {path: "htmlAI", component: ImageToHtmlComponent},
+  {path: "unitTestAI", component: TestCaseGeneratorAIComponent},
+  {path: "pdfChatBot", component: PdfChatBotComponent},
+  {path: "serverLogAss", component: ServerLogAssistantComponent}
 
 ]
 
