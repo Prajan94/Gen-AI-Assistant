@@ -196,7 +196,6 @@ def get_gmail_data():
 @app.route('/api/figma')
 def get_figma_code():
  queryparam = request.args.get('query')
- figma_loader = FigmaFileLoader("figd_O43fiwMiHVK2oSRlyExiJQNA9YbpITjybico4VAO", "0-1", "QP4PgUhxDHl7IED9H4yc82")
  index = VectorstoreIndexCreator().from_loaders([figma_loader])
  figma_doc_retriever = index.vectorstore.as_retriever()
  system_prompt_template = """You are expert coder PR. Use the provided design context to create idiomatic HTML/CSS code as possible based on the user request.
